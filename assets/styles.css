@@ -1,0 +1,366 @@
+:root {
+  /* paleta de colores */
+  --blanco: #ffffff;
+  --negro: #000;
+  --primario: #0048ff;
+  --secundario: #00ff29;
+  --gris: #5e5e5e;
+
+  /*Fuentes*/
+  --Principal: "Roboto";
+}
+
+/*Globales*/
+html {
+  font-size: 62.5%;
+  font-family: var(--Principal), serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  
+}
+
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  background: linear-gradient(to top, #c4c4c4, #ffffff);
+}
+
+h1 {
+  font-size: 3.8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/*Titulo y navegación*/
+
+.titulo span {
+  font-size: 2rem;
+}
+
+/*Navegación*/
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.nav-bg {
+  background-color: var(--primario);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 480px) {
+  .nav {
+    flex-direction: row;
+  }
+}
+
+/* navegación en los enlaces */
+.nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.nav a:hover {
+  background-color: var(--secundario);
+  color: #000;
+}
+
+/*IMAGEN DE FONDO*/
+
+.hero {
+  background-image: url(../img/hero.avif);
+  background-size: cover;
+  height: 40rem;
+  position: relative;
+  background-position: left;
+}
+
+.contenido-hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+/*Texto en la imagen o hero*/
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.ibague-ubicacion {
+  align-items: center;
+}
+
+/* Boton de contactar */
+.button {
+  background-color: #020000de;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: var(--primario) 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 38%;
+    text-align: center;
+  }
+
+  .boton-text {
+    transform: translateX(0.3rem);
+  }
+}
+
+/* Animación al poner el cursor en el botón */
+.button:hover {
+  background-color: var(--primario);
+  cursor: pointer;
+}
+
+.button svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.button:hover svg {
+  transform: translateX(5px);
+}
+
+.boton-text {
+  margin: 1 1.5rem;
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+/* Fin del botón */
+
+/* Botones del formulario */
+.button-formulario {
+  background-color: #020000;
+  color: #fff;
+  width: auto;
+  height: 5rem;
+  border: var(--primario) 0.2rem solid;
+  border-radius: 11px;
+  text-align: center;
+  transition: all 0.6s ease;
+}
+
+.button-formulario:hover {
+  background-color: var(--primario);
+  cursor: pointer;
+}
+
+/* Caja del Main */
+
+.sombra {
+  -webkit-box-shadow: -9px 20px 64px -21px rgba(99, 99, 99, 1);
+  -moz-box-shadow: -9px 20px 64px -21px rgba(99, 99, 99, 1);
+  box-shadow: -9px 20px 64px -21px rgba(99, 99, 99, 1);
+  background-color: var(--blanco);
+  border-radius: 2rem;
+}
+
+/* .container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 2rem auto;
+} */
+
+.container-main{
+  width: 80%;
+  margin: 2rem auto;
+  padding-bottom: 1rem;
+  padding-top: .5rem;
+}
+
+/* Caja de servicios */
+
+.servicios {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 480px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .container-main {
+    width: 95%;
+  }
+}
+
+.icons svg {
+  height: 75px;
+  width: 75px;
+  background-color: var(--blanco);
+  border-radius: 50%;
+  border: #000 0.2rem solid;
+}
+
+/* Iconos de servicios (aplica para todos) */
+.servicio-item .icons {
+  height: 13rem;
+  width: 13rem;
+  background-color: var(--primario);
+  border: #000 0.3rem solid;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cada uno de los grupos en servicios */
+.servicio-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio-item p {
+  line-height: 2;
+  text-align: center;
+}
+
+.servicio-item h3 {
+  font-weight: bold;
+}
+
+
+/* Formulario */
+
+.formulario {
+  background-color: var(--gris);
+  width: min(60rem, 100%);
+  height: auto;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 1.5rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+.formulario legend {
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+margin-bottom: 1rem;
+ }
+
+
+/* Inouts del formulario */
+
+.campo{
+  margin-bottom: 1rem;
+
+}
+
+.campo label{
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: block;
+}
+.campo input,
+textarea{
+  padding: .7rem;
+  width: 100%;
+  border: none;
+  border-radius: .5rem;
+}
+
+@media (min-width: 768px ) {
+
+  .campos-formulario{
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto 15rem;
+  column-gap: 1rem;
+  }
+
+  .campo:nth-child(3){
+    grid-column: 1 / 3;
+  }
+
+  .campo:nth-child(4){
+    grid-column: 1 / 3;
+  }
+
+#mensaje{
+  height: 11rem;
+}
+}
+
+
+
+
+
+/* Botones */
+
+.botones{
+  display: flex;
+justify-content: space-evenly;
+
+}
+ .enviar {
+  width: 8.7rem;
+}
+
+.footer{
+  text-align: center;
+}
